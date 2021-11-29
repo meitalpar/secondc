@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "my_mat.h"
-
-static int matrix[10][10];
+#define n 10
+static int matrix[n][n];
 
 void thereIsARoute( int b, int c) {
-	for (int k = 0; k < 10; k++) {
-		for (int i = 0; i < 10; i++) {
-     			for (int j = 0; j < 10; j++) {
+	for (int k = 0; k < n; k++) {
+		for (int i = 0; i < n; i++) {
+     			for (int j = 0; j < n; j++) {
      				int x = matrix[i][k]+matrix[k][j];
              			if (matrix[i][k] == 0 || matrix[k][j] == 0) {
 					x = 0;
@@ -29,8 +29,8 @@ void thereIsARoute( int b, int c) {
 
 void afunc () {
 	int i, j;       
-        for (i = 0; i < 10 ; i = i+1) {
-        	for (j = 0 ; j < 10; j = j+1) {      
+        for (i = 0; i < n; i = i+1) {
+        	for (j = 0 ; j < n; j = j+1) {      
                 	scanf("%d", &matrix[i][j]);
 		}
 	}
@@ -39,11 +39,11 @@ void afunc () {
 	
 void bfunc (int i,int j){
 	if (matrix[i][j] != 0) {
-		printf("TRUE");
+		printf("True");
 		printf("\n");
 	}
 	else { 
-		printf("FALSE");
+		printf("False");
         	printf("\n");
         }
 }
